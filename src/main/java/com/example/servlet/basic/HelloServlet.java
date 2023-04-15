@@ -11,21 +11,21 @@ import java.io.IOException;
 public class HelloServlet extends HttpServlet {
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("HelloServlet.service");
         // req = org.apache.catalina.connector.RequestFacade@58abdb91
-        System.out.println("req = " + req);
+        System.out.println("req = " + request);
         // resp = org.apache.catalina.connector.ResponseFacade@566c2ef4
-        System.out.println("resp = " + resp);
+        System.out.println("resp = " + response);
 
         // 쿼리 파라미터 조회
-        String username = req.getParameter("username");
+        String username = request.getParameter("username");
         System.out.println("username = " + username);
 
-        resp.setContentType("text/plain");
-        resp.setCharacterEncoding("utf-8");
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("utf-8");
         // HTTP body에 담김
-        resp.getWriter().write("hello " + username);
+        response.getWriter().write("hello " + username);
     }
 }
