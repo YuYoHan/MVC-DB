@@ -205,6 +205,15 @@ set -- \
         org.gradle.wrapper.GradleWrapperMain \
         "$@"
 
+<<<<<<< HEAD
+=======
+# Stop when "xargs" is not available.
+if ! command -v xargs >/dev/null 2>&1
+then
+    die "xargs is not available"
+fi
+
+>>>>>>> 0702edb6177f98d0e39807273f763d6ed16ddb33
 # Use "xargs" to parse quoted args.
 #
 # With -n1 it outputs one arg per line, with the quotes and backslashes removed.
